@@ -5,7 +5,7 @@ on:
     - dev
         
 jobs:
-  analyze:
+  build:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
     steps:
@@ -30,4 +30,3 @@ jobs:
     
     # Statically analyze the Dart code for any errors.
     - run: flutter analyze .
-    
