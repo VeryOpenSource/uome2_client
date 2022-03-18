@@ -5,7 +5,7 @@ on:
     - dev
         
 jobs:
-  build:
+  analyze:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
     steps:
