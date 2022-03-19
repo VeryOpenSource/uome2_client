@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uome2/features/uome2/presentation/widgets/custom_button.dart';
+import 'package:uome2/features/presentation/pages/login_page.dart';
+
 
 void main() {
   runApp(const MyApp());
