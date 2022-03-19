@@ -12,4 +12,3 @@ Widget customButton() {
     child: const Text('App Color'),
   );
 }
-
