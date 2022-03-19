@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uome2/core/theme/colors.dart';
+import 'package:uome2/core/theme/theme.dart';
 import 'package:uome2/features/auth/presentation/pages/login_page.dart';
 
 void main() {
@@ -10,10 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      color: AppColors.lightGreyColor,
+      debugShowCheckedModeBanner: false,
       title: 'UOME2',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.theme,
       home: const LoginPage(),
     );
   }
