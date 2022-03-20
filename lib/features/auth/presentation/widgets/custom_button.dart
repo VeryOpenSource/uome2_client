@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uome2/core/theme/colors.dart';
+import 'package:uome2/core/themes/app_colors.dart';
 
 Widget customButton() {
   return ElevatedButton(
