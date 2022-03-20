@@ -5,6 +5,7 @@ class AppTextStyle {
   AppTextStyle._();
 
   static TextTheme textTheme = TextTheme(
+ 
     headline1: GoogleFonts.poppins(
       fontSize: 97,
       // fontWeight: FontWeight.w300,

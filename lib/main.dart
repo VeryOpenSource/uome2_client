@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:uome2/config.dart';
 import 'package:uome2/core/theme/colors.dart';
 import 'package:uome2/core/theme/theme.dart';
 import 'package:uome2/features/auth/presentation/pages/login_page.dart';
 
 void main() {
+  Config();
   runApp(const MyApp());
 }
 

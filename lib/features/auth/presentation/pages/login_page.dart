@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:uome2/features/auth/presentation/widgets/custom_button.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:uome2/core/theme/colors.dart';
+import 'package:uome2/features/auth/presentation/pages/login_form.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,6 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _passwordVisible = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,36 +24,24 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            Text(
-              'h1',
-              style: Theme.of(context).textTheme.headline1,
-            ),
-            Text(
-              'h2',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            Text(
-              'h3',
-              style: Theme.of(context).textTheme.headline3,
-            ),
-            Text(
-              'h4',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'h5',
-              style: Theme.of(context).textTheme.headline5,
-            ),
-            Text(
-              'h6',
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            customButton(),
-          ],
+        child: ElevatedButton(
+          onPressed: () {
+            showModalBottomSheet<void>(
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              context: context,
+              builder: (BuildContext context) {
+                return const LoginForm();
+              },
+            );
+          },
+          child: const Text(
+            'Login',
+          ),
         ),
       ),
     );
   }
+
+
 }
