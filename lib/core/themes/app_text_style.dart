@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle {
-  AppTextStyle._();
-
   static TextTheme textTheme = TextTheme(
     headline1: GoogleFonts.poppins(
       fontSize: 97,
