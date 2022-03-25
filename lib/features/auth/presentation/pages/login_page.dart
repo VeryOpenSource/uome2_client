@@ -23,27 +23,27 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             Text(
-              'h1',
+              'h1-test',
               style: Theme.of(context).textTheme.headline1,
             ),
             Text(
-              'h2',
+              'h2-test',
               style: Theme.of(context).textTheme.headline2,
             ),
             Text(
-              'h3',
+              'h3-test',
               style: Theme.of(context).textTheme.headline3,
             ),
             Text(
-              'h4',
+              'h4-test',
               style: Theme.of(context).textTheme.headline4,
             ),
             Text(
-              'h5',
+              'h5-test',
               style: Theme.of(context).textTheme.headline5,
             ),
             Text(
-              'h6',
+              'h6-test',
               style: Theme.of(context).textTheme.headline6,
             ),
             customButton(),

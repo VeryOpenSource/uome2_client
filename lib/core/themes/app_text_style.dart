@@ -5,19 +5,23 @@ class AppTextStyle {
   static TextTheme textTheme = TextTheme(
     headline1: GoogleFonts.poppins(
       fontSize: 97,
-      letterSpacing: -1.5,
+      letterSpacing: 0.15,
     ),
     headline2: GoogleFonts.poppins(
       fontSize: 61,
-      letterSpacing: -0.5,
+      letterSpacing: 0.15,
     ),
-    headline3: GoogleFonts.poppins(fontSize: 48, fontWeight: FontWeight.w400),
+    headline3: GoogleFonts.poppins(
+      fontSize: 48,
+      letterSpacing: 0.15,
+    ),
     headline4: GoogleFonts.poppins(
       fontSize: 34,
-      letterSpacing: 0.25,
+      letterSpacing: 0.15,
     ),
     headline5: GoogleFonts.poppins(
       fontSize: 24,
+      letterSpacing: 0.15,
     ),
     headline6: GoogleFonts.poppins(
       fontSize: 20,
@@ -29,32 +33,27 @@ class AppTextStyle {
     ),
     subtitle2: GoogleFonts.poppins(
       fontSize: 14,
-      letterSpacing: 0.1,
+      letterSpacing: 0.15,
     ),
     bodyText1: GoogleFonts.poppins(
       fontSize: 16,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 0.5,
+      letterSpacing: 0.15,
     ),
     bodyText2: GoogleFonts.poppins(
       fontSize: 14,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 0.25,
+      letterSpacing: 0.15,
     ),
     button: GoogleFonts.poppins(
       fontSize: 14,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 1.25,
+      letterSpacing: 0.15,
     ),
     caption: GoogleFonts.poppins(
       fontSize: 12,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 0.4,
+      letterSpacing: 0.15,
     ),
     overline: GoogleFonts.poppins(
       fontSize: 10,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 1.5,
+      letterSpacing: 0.15,
     ),
   );
 }
