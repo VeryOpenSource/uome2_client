@@ -5,10 +5,13 @@ Widget customButton() {
   return ElevatedButton(
     onPressed: () {},
     style: ElevatedButton.styleFrom(
-      onPrimary: AppColors.whiteColor,
       primary: AppColors.secondary,
-      shape: const StadiumBorder(),
     ),
-    child: const Text('App Color'),
+    child: const Text(
+      'App Color',
+      style: TextStyle(
+        color: AppColors.blackColor,
+      ),
+    ),
   );
 }
