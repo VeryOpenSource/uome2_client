@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uome2/core/themes/themes.dart';
-
 class AppTheme {
   static ThemeData get theme {
     return ThemeData(

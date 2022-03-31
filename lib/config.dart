@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Config {
   late MediaQueryData? _mediaQueryData;
-  static double? screenWidth ;
+  static double? screenWidth;
   static double? screenHeight;
   static Orientation? orientation;
 
