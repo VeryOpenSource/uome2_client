@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:uome2/core/theme/colors.dart';
+import 'package:uome2/core/themes/app_colors.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _LoginFormState extends State<LoginForm> {
     return Container(
       height: MediaQuery.of(context).size.height * 0.95,
       decoration: const BoxDecoration(
-        color: AppColors.lightGreyColor,
+        color: AppColors.lightGrey,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(15),
           topRight: Radius.circular(15),
@@ -149,7 +149,7 @@ class _LoginFormState extends State<LoginForm> {
               12,
             ), // <-- Radius
           ),
-          primary: AppColors.secondaryColor.withOpacity(0.99),
+          primary: AppColors.secondary.withOpacity(0.99),
           minimumSize: const Size.fromHeight(50), // NEW
         ),
         child: Text(
@@ -192,14 +192,14 @@ class _LoginFormState extends State<LoginForm> {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             elevation: 15,
-            shadowColor: AppColors.primaryBlackColor,
+            shadowColor: AppColors.blackColor,
             primary: AppColors.whiteColor,
             shape: const CircleBorder(),
             padding: const EdgeInsets.all(15),
           ),
           child: const FaIcon(
             FontAwesomeIcons.facebook,
-            color: AppColors.primaryBlackColor,
+            color: AppColors.blackColor,
             size: 15,
           ),
         ),
@@ -207,14 +207,14 @@ class _LoginFormState extends State<LoginForm> {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             elevation: 15,
-            shadowColor: AppColors.primaryBlackColor,
+            shadowColor: AppColors.blackColor,
             primary: AppColors.whiteColor,
             shape: const CircleBorder(),
             padding: const EdgeInsets.all(15),
           ),
           child: const FaIcon(
             FontAwesomeIcons.google,
-            color: AppColors.primaryBlackColor,
+            color: AppColors.blackColor,
             size: 15,
           ),
         ),
@@ -222,14 +222,14 @@ class _LoginFormState extends State<LoginForm> {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             elevation: 15,
-            shadowColor: AppColors.primaryBlackColor,
+            shadowColor: AppColors.blackColor,
             primary: AppColors.whiteColor,
             shape: const CircleBorder(),
             padding: const EdgeInsets.all(15),
           ),
           child: const FaIcon(
             FontAwesomeIcons.twitter,
-            color: AppColors.primaryBlackColor,
+            color: AppColors.blackColor,
             size: 15,
           ),
         ),
