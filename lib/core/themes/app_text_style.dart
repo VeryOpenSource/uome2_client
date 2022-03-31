@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle {
   static TextTheme textTheme = TextTheme(
- 
     headline1: GoogleFonts.poppins(
       fontSize: 97,
       letterSpacing: 0.15,

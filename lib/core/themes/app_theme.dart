@@ -5,14 +5,14 @@ import 'package:uome2/core/themes/themes.dart';
 class AppTheme {
   static ThemeData get theme {
     return ThemeData(
-      brightness: Brightness.light,
-      primaryColor: AppColors.background,
-      visualDensity: VisualDensity.adaptivePlatformDensity,
       appBarTheme: const AppBarTheme(
         color: AppColors.lightGrey,
       ),
+      brightness: Brightness.light,
       fontFamily: GoogleFonts.poppins().fontFamily,
+      primaryColor: AppColors.background,
       textTheme: AppTextStyle.textTheme,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
     );
   }
 }

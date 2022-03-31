@@ -44,68 +44,26 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Expanded loginForm(BuildContext context) {
-    return Expanded(
-      child: Column(
+  Padding divider() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(18),
-            child: Text(
-              'Create an acount',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+          Expanded(
+            child: Container(
+              color: Colors.black.withOpacity(0.3),
+              height: 1,
             ),
           ),
-          emailTextField(),
-          passwordTextField(context),
-          loginButton(context),
-          const Text('Already Have an Acount?'),
-          divider(),
-          socialMediaLogin(),
+          const Text(' OR '),
+          Expanded(
+            child: Container(
+              color: Colors.black.withOpacity(0.3),
+              height: 1,
+            ),
+          ),
         ],
-      ),
-    );
-  }
-
-  Padding passwordTextField(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 10,
-      ),
-      child: TextField(
-        obscureText: _passwordVisible,
-        decoration: InputDecoration(
-          suffixIcon: IconButton(
-            icon: Icon(
-              _passwordVisible ? Icons.visibility : Icons.visibility_off,
-              color: Theme.of(context).primaryColorDark,
-            ),
-            onPressed: () {
-              setState(() {
-                _passwordVisible = !_passwordVisible;
-              });
-            },
-          ),
-          filled: true,
-          fillColor: Colors.white,
-          hintText: 'Password',
-          contentPadding: const EdgeInsets.only(
-            left: 14,
-            bottom: 8,
-            top: 8,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
       ),
     );
   }
@@ -144,13 +102,13 @@ class _LoginFormState extends State<LoginForm> {
       child: ElevatedButton(
         onPressed: () => Navigator.pop(context),
         style: ElevatedButton.styleFrom(
+          minimumSize: const Size.fromHeight(50), // NEW
+          primary: AppColors.secondary.withOpacity(0.99),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               12,
             ), // <-- Radius
           ),
-          primary: AppColors.secondary.withOpacity(0.99),
-          minimumSize: const Size.fromHeight(50), // NEW
         ),
         child: Text(
           'Login',
@@ -160,26 +118,68 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Padding divider() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
+  Expanded loginForm(BuildContext context) {
+    return Expanded(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: Container(
-              height: 1,
-              color: Colors.black.withOpacity(0.3),
+          const Padding(
+            padding: EdgeInsets.all(18),
+            child: Text(
+              'Create an acount',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          const Text(' OR '),
-          Expanded(
-            child: Container(
-              height: 1,
-              color: Colors.black.withOpacity(0.3),
-            ),
-          ),
+          emailTextField(),
+          passwordTextField(context),
+          loginButton(context),
+          const Text('Already Have an Acount?'),
+          divider(),
+          socialMediaLogin(),
         ],
+      ),
+    );
+  }
+
+  Padding passwordTextField(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.only(
+            left: 14,
+            bottom: 8,
+            top: 8,
+          ),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: const BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          fillColor: Colors.white,
+          filled: true,
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          hintText: 'Password',
+          suffixIcon: IconButton(
+            icon: Icon(
+              _passwordVisible ? Icons.visibility : Icons.visibility_off,
+              color: Theme.of(context).primaryColorDark,
+            ),
+            onPressed: () {
+              setState(() {
+                _passwordVisible = !_passwordVisible;
+              });
+            },
+          ),
+        ),
+        obscureText: _passwordVisible,
       ),
     );
   }
@@ -192,10 +192,10 @@ class _LoginFormState extends State<LoginForm> {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             elevation: 15,
-            shadowColor: AppColors.blackColor,
-            primary: AppColors.whiteColor,
-            shape: const CircleBorder(),
             padding: const EdgeInsets.all(15),
+            primary: AppColors.whiteColor,
+            shadowColor: AppColors.blackColor,
+            shape: const CircleBorder(),
           ),
           child: const FaIcon(
             FontAwesomeIcons.facebook,
@@ -207,10 +207,10 @@ class _LoginFormState extends State<LoginForm> {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             elevation: 15,
-            shadowColor: AppColors.blackColor,
-            primary: AppColors.whiteColor,
-            shape: const CircleBorder(),
             padding: const EdgeInsets.all(15),
+            primary: AppColors.whiteColor,
+            shadowColor: AppColors.blackColor,
+            shape: const CircleBorder(),
           ),
           child: const FaIcon(
             FontAwesomeIcons.google,
@@ -222,10 +222,10 @@ class _LoginFormState extends State<LoginForm> {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             elevation: 15,
-            shadowColor: AppColors.blackColor,
-            primary: AppColors.whiteColor,
-            shape: const CircleBorder(),
             padding: const EdgeInsets.all(15),
+            primary: AppColors.whiteColor,
+            shadowColor: AppColors.blackColor,
+            shape: const CircleBorder(),
           ),
           child: const FaIcon(
             FontAwesomeIcons.twitter,
