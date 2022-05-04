@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const LoginPage(),
       theme: AppTheme.theme,
-      title: 'UOME-2',
+      title: 'UOME2',
     );
   }
 }
