@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uome2/core/themes/app_colors.dart';
+import 'package:uome2/features/auth/presentation/widgets/custom_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -15,14 +16,13 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.95,
       decoration: const BoxDecoration(
-        color: AppColors.lightGrey,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(15),
-          topRight: Radius.circular(15),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(15),
         ),
+        color: AppColors.lightGrey,
       ),
+      height: MediaQuery.of(context).size.height * 0.85,
       child: Padding(
         padding: const EdgeInsets.all(30),
         child: Column(
@@ -32,19 +32,19 @@ class _LoginFormState extends State<LoginForm> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 InkWell(
-                  onTap: () => Navigator.pop(context),
                   child: const Icon(Icons.cancel_outlined),
+                  onTap: () => Navigator.pop(context),
                 ),
               ],
             ),
-            loginForm(context)
+            _loginForm(context)
           ],
         ),
       ),
     );
   }
 
-  Padding divider() {
+  Widget _divider() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
@@ -68,7 +68,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Padding emailTextField() {
+  Widget _buildEmailTextField() {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 10,
@@ -96,7 +96,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Padding loginButton(BuildContext context) {
+  Widget _buildLoginButton(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: ElevatedButton(
@@ -118,33 +118,44 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Expanded loginForm(BuildContext context) {
+  Widget _loginForm(BuildContext context) {
     return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(18),
-            child: Text(
-              'Create an acount',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: ListView(
+          shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.all(15),
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(18),
+              child: Text(
+                'Create an acount',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          emailTextField(),
-          passwordTextField(context),
-          loginButton(context),
-          const Text('Already Have an Acount?'),
-          divider(),
-          socialMediaLogin(),
-        ],
+            _buildEmailTextField(),
+            _buildPasswordTextField(context),
+            _buildLoginButton(context),
+            const Text(
+              'Already Have an Acount?',
+              style: TextStyle(color: Colors.blueAccent),
+            ),
+            _divider(),
+            _socialMediaLogin(),
+            const SizedBox(
+              height: 300,
+            )
+          ],
+        ),
       ),
     );
   }
 
-  Padding passwordTextField(BuildContext context) {
+  Widget _buildPasswordTextField(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 10,
@@ -170,7 +181,6 @@ class _LoginFormState extends State<LoginForm> {
           suffixIcon: IconButton(
             icon: Icon(
               _passwordVisible ? Icons.visibility : Icons.visibility_off,
-              color: Theme.of(context).primaryColorDark,
             ),
             onPressed: () {
               setState(() {
@@ -184,55 +194,13 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Row socialMediaLogin() {
+  Widget _socialMediaLogin() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            elevation: 15,
-            padding: const EdgeInsets.all(15),
-            primary: AppColors.whiteColor,
-            shadowColor: AppColors.blackColor,
-            shape: const CircleBorder(),
-          ),
-          child: const FaIcon(
-            FontAwesomeIcons.facebook,
-            color: AppColors.blackColor,
-            size: 15,
-          ),
-        ),
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            elevation: 15,
-            padding: const EdgeInsets.all(15),
-            primary: AppColors.whiteColor,
-            shadowColor: AppColors.blackColor,
-            shape: const CircleBorder(),
-          ),
-          child: const FaIcon(
-            FontAwesomeIcons.google,
-            color: AppColors.blackColor,
-            size: 15,
-          ),
-        ),
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            elevation: 15,
-            padding: const EdgeInsets.all(15),
-            primary: AppColors.whiteColor,
-            shadowColor: AppColors.blackColor,
-            shape: const CircleBorder(),
-          ),
-          child: const FaIcon(
-            FontAwesomeIcons.twitter,
-            color: AppColors.blackColor,
-            size: 15,
-          ),
-        ),
+        CustomButton(onPress: () {}, flatIcon: FontAwesomeIcons.facebook),
+        CustomButton(onPress: () {}, flatIcon: FontAwesomeIcons.google),
+        CustomButton(onPress: () {}, flatIcon: FontAwesomeIcons.twitter),
       ],
     );
   }

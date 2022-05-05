@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:uome2/config.dart';
 import 'package:uome2/core/themes/themes.dart';
-import 'package:uome2/features/auth/presentation/pages/login_page.dart';
+import 'package:uome2/features/auth/presentation/pages/splash_screen.dart';
 
 void main() {
-  Config();
   runApp(const MyApp());
 }
 
