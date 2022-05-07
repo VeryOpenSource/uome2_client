@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uome2/features/auth/presentation/pages/login_form.dart';
+import 'package:uome2/features/auth/presentation/pages/login_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

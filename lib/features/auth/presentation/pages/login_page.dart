@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:uome2/core/themes/app_colors.dart';
-import 'package:uome2/features/auth/presentation/widgets/custom_button.dart';
+import 'package:uome2/core/presentation/themes/themes.dart';
+import 'package:uome2/core/presentation/widgets/custom_circular_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -37,14 +37,14 @@ class _LoginFormState extends State<LoginForm> {
                 ),
               ],
             ),
-            _loginForm(context)
+            _buildLoginForm(context)
           ],
         ),
       ),
     );
   }
 
-  Widget _divider() {
+  Widget _buildDivider() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
@@ -56,7 +56,10 @@ class _LoginFormState extends State<LoginForm> {
               height: 1,
             ),
           ),
-          const Text(' OR '),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Text('OR'),
+          ),
           Expanded(
             child: Container(
               color: Colors.black.withOpacity(0.3),
@@ -80,14 +83,14 @@ class _LoginFormState extends State<LoginForm> {
             bottom: 8,
             top: 8,
           ),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(10),
           ),
           fillColor: Colors.white,
           filled: true,
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide: const BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(10),
           ),
           hintText: 'Email Address',
@@ -118,7 +121,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Widget _loginForm(BuildContext context) {
+  Widget _buildLoginForm(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -144,8 +147,8 @@ class _LoginFormState extends State<LoginForm> {
               'Already Have an Acount?',
               style: TextStyle(color: Colors.blueAccent),
             ),
-            _divider(),
-            _socialMediaLogin(),
+            _buildDivider(),
+            _buildSocialMediaLogin(),
             const SizedBox(
               height: 300,
             )
@@ -168,13 +171,13 @@ class _LoginFormState extends State<LoginForm> {
             top: 8,
           ),
           enabledBorder: UnderlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide: const BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(10),
           ),
           fillColor: Colors.white,
           filled: true,
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide: const BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(10),
           ),
           hintText: 'Password',
@@ -194,13 +197,22 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Widget _socialMediaLogin() {
+  Widget _buildSocialMediaLogin() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CustomButton(onPress: () {}, flatIcon: FontAwesomeIcons.facebook),
-        CustomButton(onPress: () {}, flatIcon: FontAwesomeIcons.google),
-        CustomButton(onPress: () {}, flatIcon: FontAwesomeIcons.twitter),
+        CustomCircularButton(
+          onPressed: () {},
+          flatIcon: FontAwesomeIcons.facebook,
+        ),
+        CustomCircularButton(
+          onPressed: () {},
+          flatIcon: FontAwesomeIcons.google,
+        ),
+        CustomCircularButton(
+          onPressed: () {},
+          flatIcon: FontAwesomeIcons.twitter,
+        ),
       ],
     );
   }
