@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uome2/core/presentation/themes/themes.dart';
 import 'package:uome2/core/presentation/widgets/custom_circular_button.dart';
+import 'package:uome2/core/presentation/widgets/custom_rounded_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -102,21 +103,11 @@ class _LoginFormState extends State<LoginForm> {
   Widget _buildLoginButton(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: ElevatedButton(
-        onPressed: () => Navigator.pop(context),
-        style: ElevatedButton.styleFrom(
-          minimumSize: const Size.fromHeight(50), // NEW
-          primary: AppColors.secondary.withOpacity(0.99),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              12,
-            ), // <-- Radius
-          ),
-        ),
-        child: Text(
-          'Login',
-          style: Theme.of(context).textTheme.headline6,
-        ),
+      child: CustomRoundedButton(
+        btntext: 'Login',
+        onPressed: () {
+          Navigator.pop(context);
+        },
       ),
     );
   }
